@@ -1,0 +1,431 @@
+* {
+  font-family: 'Rubik Distressed', cursive;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: url('assets/dark.png');
+  background-size: cover;
+  transition: 1s;
+}
+
+.whole-calculator {
+  width: 20%;
+  height: 70%;
+  margin: 50px auto;
+  border: 5px solid #8C162C;
+  border-radius: 20px;
+  cursor: url('assets/saber.png'), progress;
+}
+
+.top-calculator {
+  background-color: #2f3640;
+  height: 35%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-top: 10px;
+}
+
+.screen-numbers {
+  display: flex;
+  max-width: 300px;
+  justify-content: end;
+  margin-top: 13px;
+  margin-bottom: 30%;
+  font-size: 40px;
+  padding: 20px;
+  color: white;
+  overflow: hidden;
+}
+
+.screen-history {
+  display: none;
+
+}
+.screen-history_activate {
+  color: #f5f6fa;
+  opacity: 0.4;
+  display: block;
+  text-align: center;
+  max-width: 90%;
+  max-height: 60px;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 15px;
+  padding-right: 5%;
+  overflow: scroll;
+  border: 3px solid #8C162C;
+  border-radius: 5px;
+  margin: 20px auto;
+}
+
+.screen-log {
+  margin: 0 auto;
+  width: 60%;
+  height: 60%;
+  max-height: 75px;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+/*//////////////////         BOTON           ////////////////////*/
+.switch {
+  position: relative;
+  display: block;
+  width: 60px;
+  height: 34px;
+  margin: 0px auto;
+  
+}
+
+.switch input {
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  
+  position: absolute;
+  cursor: url('assets/saber.png'), progress;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #7f8fa6;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: url("assets/moon1.png");
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #f5f6fa;
+  cursor: url('assets/mario.png'), progress;
+}
+
+
+
+input:checked + .slider:before {
+  content: url("assets/sun.png");
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+/*/////////////////////////////////////////////////*/
+
+.bottom-calculator {
+  background: #2f3640;
+  height: 63.5%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25% ;
+  grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
+}
+
+.button {
+  margin: 2px;
+  border-radius: 12px;
+  background-color: #2f3640;
+  color: #f5f6fa;
+  font-size: 20px;
+  cursor: url('assets/saber.png'), progress;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.log {
+  margin: 2px;
+  border-radius: 12px;
+  background-color: #2f3640;
+  color: #f5f6fa;
+  font-size: 20px;
+  cursor: url('assets/saber.png'), progress;
+  transition: 0.5s;
+  z-index: 1000;
+}
+
+.nums{
+  transition: 0.3s;
+}
+
+.equal {
+  background-color: #6366f1;
+  grid-row: 6/7;
+  grid-column: 1/5;
+  transition: 0.3s;
+}
+
+.zero {
+  grid-column: 1/2;
+  grid-row: 5/6;
+}
+.delLog {
+  grid-column: 2/3;
+  grid-row: 5/6;
+}
+
+.log {
+  grid-column: 3/4;
+  grid-row: 5/6;
+}
+
+.dot {
+  grid-column: 4/5;
+  grid-row: 5/6;
+}
+
+.multiplication {
+  padding-top: 7px ;
+}
+
+.operator {
+  color: #01b050;
+  transition: 0.3s;
+}
+.erase {
+  background: #8C162C;
+  color: #f5f6fa;
+  transition: 0.3s;
+}
+
+.img-mario {
+  width: 95px;
+  padding-top: 14px;
+  padding-left: 86px;
+  display: none;
+}
+
+.img-mushroom {
+  width: 95px;
+  padding-top: 14px;
+  padding-left: 86px;
+  display: none;
+  
+}
+
+
+
+/* Day Mode */
+
+.screen-history_activate_day {
+  color: white;
+  border: 3px solid #b36f6f;
+  opacity: 0.4;
+  display: block;
+  text-align: center;
+  max-width: 90%;
+  max-height: 60px;
+  justify-content: center;
+  margin-top: 10px;
+  font-size: 15px;
+  padding-right: 5%;
+  overflow: scroll;
+  border-radius: 5px;
+  margin: 20px auto;
+
+}
+
+.button_day {
+  margin: 2px;
+  border-radius: 12px;
+  background-color: #5C93FD ;
+  color: #FC983A;
+  font-size: 20px;
+  cursor: url('assets/mario.png'), progress;
+  transition: 0.3s;
+}
+
+.log_day {
+  margin: 2px;
+  border-radius: 12px;
+  background-color: #5C93FD ;
+  color: #FC983A;
+  font-size: 20px;
+  cursor: url('assets/mario.png'), progress;
+  transition: 0.3s;
+}
+
+.screen-numbers_day {
+  display: flex;
+  max-width: 300px;
+  justify-content: end;
+  margin-top: 13px;
+  margin-bottom: 30%;
+  font-size: 40px;
+  padding: 20px;
+  color: #FC983A;
+  overflow: hidden;
+}
+
+.body_day {
+  background: url('assets/body_day.png');
+  background-repeat: no-repeat;
+  background-size: 100%;
+  transition: 1s;
+  }
+
+.top-calculator_day {
+  position: 0;
+  background-color: transparent;
+  height: 35%;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  padding-top: 10px; 
+}
+
+.whole-calculator_day {
+  width: 20%;
+  height: 70%;
+  margin: 50px auto;
+  border: 5px solid #b36f6f;
+  border-radius: 20px;
+  cursor: url('assets/mario.png'), progress;
+  
+}
+.equal_day {
+  background-color: #FC983A;
+  grid-row: 6/7;
+  grid-column: 1/5;
+  color: #f5f6fa;
+  
+}
+
+.bottom-calculator_day {
+  background: url("assets/wall.png");
+  
+  height: 64.5%;
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25% ;
+  grid-template-rows: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  
+}
+
+.operator_day {
+  color: brown;
+}
+
+.erase_day {
+  background:  #8C162C;
+  color: #2f3640;
+  
+}
+.img-mario_day {
+  width: 7vw;
+  padding-top: 14px;
+  padding-left: 86px;
+  display: block;
+  
+}
+.img-mushroom_day {
+  position: absolute;
+  width: 8vw;
+  margin-top: 15vh;
+  padding-left: 0px;
+  display: block;
+  z-index: -1;
+  
+}
+
+
+
+
+/*////////////////////////HOVER////////////////////////////*/
+
+.button:hover {
+  background-color: #f5f6fa;
+  color: #2f3640;
+  font-size: 30px;
+}
+
+.log:hover {
+  background-color: #f5f6fa;
+  color: #2f3640;
+  font-size: 30px;
+}
+
+.button_day:hover {
+  background-color: #f5f6fa;
+  color: #5C93FD;
+  font-size: 30px;
+}
+
+.log_day:hover{
+  background-color: #f5f6fa;
+  color: #5C93FD;
+  font-size: 30px;
+}
+
+.operator:hover {
+  background: #01b050;
+  color: #2f3640;
+}
+
+.operator_day:hover {
+  color:  #5C93FD;
+  background: brown;
+}
+.erase:hover{
+  background:#f5f6fa;
+  color: #8C162C;
+  transition: 0.3s;
+   
+}
+.erase_day:hover {
+  background:  #2f3640;
+  color: #8C162C;
+}
+
+
+.equal:hover {
+  background-color:  #f5f6fa;
+  grid-row: 6/7;
+  grid-column: 1/5;
+  color: #6366f1;
+}
+.equal_day:hover {
+  background-color:  #f5f6fa;
+  grid-row: 6/7;
+  grid-column: 1/5;
+  color: #FC983A;
+ 
+}
+
+/*////////////////////////Active//////////////////////////*/
+
+.nums:active {
+  transform: rotate(360deg);
+}
+/*/////////////////////////////////////////////////////*/
+
+.output {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;
+  word-wrap: break-word;
+  word-break: break-all;
+}
